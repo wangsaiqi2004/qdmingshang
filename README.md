@@ -13,9 +13,12 @@ Deployment notes:
 - Use PHP 7.4+ or PHP 8.2.
 - Set the site index order to prefer `index.php` before `index.html` if you want the editable homepage preview.
 - Make `rsadmin/data` writable by PHP after deployment:
+- If you want uploads and image replacement, also make `uploadfile/admin` writable:
+- If you want to replace original static images, the PHP user must be able to write the target image files.
 
 ```bash
-chown -R www:www /www/wwwroot/qdmingshang/rsadmin/data
+mkdir -p /www/wwwroot/qdmingshang/uploadfile/admin
+chown -R www:www /www/wwwroot/qdmingshang
 ```
 
 - First visit `/rsadmin/` and create your own admin account. No default password is committed.

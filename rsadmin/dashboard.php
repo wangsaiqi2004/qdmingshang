@@ -10,6 +10,8 @@ qdm_admin_header('控制台');
         <div class="sidebar-title">名商后台</div>
         <nav>
             <a class="active" href="dashboard.php">站点设置</a>
+            <a href="images.php">图片替换</a>
+            <a href="media.php">媒体库</a>
             <a href="../index.php" target="_blank">预览首页</a>
             <a href="logout.php">退出登录</a>
         </nav>
@@ -18,7 +20,7 @@ qdm_admin_header('控制台');
         <header class="panel-header">
             <div>
                 <h1>站点设置</h1>
-                <p>测试版后台：先支持首页基础信息修改，产品/新闻完整管理后续再做。</p>
+                <p>测试版后台：支持基础信息、图片上传和常用页面图片替换。</p>
             </div>
             <a class="ghost-button" href="../index.php" target="_blank">打开前台</a>
         </header>

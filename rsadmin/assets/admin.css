@@ -108,7 +108,8 @@ a {
 }
 
 input,
-textarea {
+textarea,
+select {
     width: 100%;
     border: 1px solid #d5dde5;
     border-radius: 4px;
@@ -118,9 +119,15 @@ textarea {
     outline: none;
 }
 
-input {
+input,
+select {
     height: 42px;
     padding: 0 12px;
+}
+
+input[type="file"] {
+    height: auto;
+    padding: 10px 12px;
 }
 
 textarea {
@@ -129,7 +136,8 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     border-color: #15985b;
     box-shadow: 0 0 0 3px rgba(21, 152, 91, 0.12);
 }
@@ -229,6 +237,10 @@ button,
     gap: 18px;
 }
 
+.compact-form {
+    max-width: 760px;
+}
+
 .form-section {
     display: grid;
     gap: 16px;
@@ -259,6 +271,106 @@ button,
     background: #f3f6f9;
 }
 
+.inline-actions {
+    position: static;
+    justify-content: flex-start;
+    padding: 0;
+    background: transparent;
+}
+
+.upload-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.upload-form input[type="file"] {
+    max-width: 420px;
+}
+
+.help-text,
+.empty-text {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+.media-grid,
+.asset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.media-card,
+.asset-card {
+    min-width: 0;
+    border: 1px solid #dce4ec;
+    border-radius: 6px;
+    background: #fbfdff;
+    overflow: hidden;
+}
+
+.asset-card {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 14px;
+    padding: 12px;
+}
+
+.media-thumb,
+.asset-preview {
+    display: grid;
+    place-items: center;
+    min-height: 120px;
+    background: #edf2f7;
+}
+
+.asset-preview {
+    min-height: 96px;
+    border-radius: 4px;
+}
+
+.media-thumb img,
+.asset-preview img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.asset-preview img {
+    max-height: 96px;
+}
+
+.media-info,
+.asset-card > div:last-child {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+}
+
+.asset-card > div:last-child {
+    padding: 0;
+}
+
+code {
+    display: block;
+    overflow-wrap: anywhere;
+    border-radius: 4px;
+    padding: 6px 8px;
+    background: #eef3f7;
+    color: #465a69;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+}
+
+.asset-card p {
+    margin: 0;
+    color: #718096;
+    font-size: 13px;
+}
+
 @media (max-width: 900px) {
     .admin-layout {
         grid-template-columns: 1fr;
@@ -269,6 +381,10 @@ button,
     }
 
     .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .asset-card {
         grid-template-columns: 1fr;
     }
 
